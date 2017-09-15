@@ -30,9 +30,7 @@ namespace Owin.Metrics.Middleware
             {
                 await this.next(environment);
 
-                var httpResponseStatusCode = int.Parse(environment["owin.ResponseStatusCode"].ToString());
-
-                this.httpStatusCodeMeter.Mark(httpResponseStatusCode.ToString());
+                this.httpStatusCodeMeter.Mark(environment["owin.ResponseStatusCode"].ToString());
             }
             else
             {
