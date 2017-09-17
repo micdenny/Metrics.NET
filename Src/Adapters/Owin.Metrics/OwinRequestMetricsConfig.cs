@@ -82,13 +82,25 @@ namespace Owin.Metrics
         }
 
         /// <summary>
-        /// Registers a Meter metric named "Owin.Errors" that records the rate at witch unhanded errors occurred while 
+        /// Registers a Meter metric named "Owin.Errors" that records the rate at which unhanded errors occurred while 
         /// processing Nancy requests.
         /// </summary>
         /// <param name="metricName">Name of the metric.</param>
         public OwinRequestMetricsConfig WithErrorsMeter(string metricName = "Errors")
         {
             var metricsMiddleware = new ErrorMeterMiddleware(this.metricsContext, metricName, this.ignoreRequestPathPatterns);
+            middlewareRegistration(metricsMiddleware);
+            return this;
+        }
+
+        /// <summary>
+        /// Registers a Meter metric named "Owin.HttpStatusCodes" that records the rate at which given HTTP stats codes 
+        /// are returned.
+        /// </summary>
+        /// <param name="metricName">Name of the metric.</param>
+        public OwinRequestMetricsConfig WithHttpStatusCodeMeter(string metricName = "HttpStatusCodes")
+        {
+            var metricsMiddleware = new HttpStatusCodeMeterMiddleware(this.metricsContext, metricName, this.ignoreRequestPathPatterns);
             middlewareRegistration(metricsMiddleware);
             return this;
         }
