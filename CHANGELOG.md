@@ -1,5 +1,6 @@
 ###0.5.5 / 2018-02-19
 * added the option to trace initalization of HttpEndpoint
+* owin adapter: middleware that allows tracking of status codes returned from app
 
 ###0.5.4 / 2017-06-27
 * fixed the content type for the web app in the owin adapter
