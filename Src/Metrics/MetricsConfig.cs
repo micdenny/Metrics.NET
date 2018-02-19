@@ -268,6 +268,11 @@ namespace Metrics
             return this;
         }
 
+        /// <summary>
+        /// Returns a task which is completed only after HttpEndpoint is initialized
+        /// </summary>
+        public Task WhenEndpointInitialized() => Task.WhenAll(this.httpEndpoints.Values);        
+
         public void Dispose()
         {
             ShutdownHttpEndpoints();
