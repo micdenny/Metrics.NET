@@ -5,11 +5,10 @@
     <Company>Iulian Margarintescu @ Erata.NET, The Recognos Metrics.NET Team</Company>
     <Product>Metrics.NET</Product>
     <PackageId>Metrics.NET</PackageId>
-    <AssemblyVersion>0.5.5.0</AssemblyVersion>
-    <FileVersion>0.5.5.0</FileVersion>
     <Description>Metrics monitoring and reporting library</Description>
     <Copyright>Copyright Iulian Margarintescu, The Recognos Metrics.NET Team © 2017</Copyright>
     <Authors>Iulian Margarintescu @ Erata.NET, The Recognos Metrics.NET Team</Authors>
+    <Version>0.6.0-netcore</Version>
   </PropertyGroup>
 
   <ItemGroup>
